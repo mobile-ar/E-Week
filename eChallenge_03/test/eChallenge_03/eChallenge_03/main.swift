@@ -10,25 +10,23 @@ import Foundation
 
 class Calculate {
     static func minNumberDividedBy(dividers: [Int]) -> Int {
-        var num = 1, flag = true
+        var num = dividers.first!, flag = true
         
         while(flag) {
             for divisor in dividers {
                 if (num%divisor != 0) {
                     break;
                 }
-                if dividers.count == divisor {
-                    flag = false
+                if dividers.last! == divisor {
+                    return num
                 }
             }
-            num++
+            num+=dividers.first!
         }
-        return num-1
     }
 }
 
-
-let num = Calculate.minNumberDividedBy([Int](2...20))
+let arr = [Int](2...20).sort({$0 > $1})
+let num = Calculate.minNumberDividedBy(arr)
 print("lowest divisible number upto 20 is \(num)") //lowest divisible number upto 20 is 232792560
-
 //lowest divisible number upto 20 is 232792560
