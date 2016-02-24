@@ -29,4 +29,3 @@ class Calculate {
 let arr = [Int](2...20).sort({$0 > $1})
 let num = Calculate.minNumberDividedBy(arr)
 print("lowest divisible number upto 20 is \(num)") //lowest divisible number upto 20 is 232792560
-//lowest divisible number upto 20 is 232792560
